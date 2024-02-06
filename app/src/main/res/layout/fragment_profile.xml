@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/fullscreenBackgroundColor"
+    android:theme="@style/ThemeOverlay.DateDating.FullscreenContainer"
+    tools:context=".ui.screens.profile.ProfileFragment"
+    android:id="@+id/fragmentProfile"
+    >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/profile"
+                android:layout_width="400dp"
+                android:layout_height="450dp"
+                android:layout_marginTop="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <VideoView
+                    android:id="@+id/imageProfileProfile"
+                    android:layout_width="400dp"
+                    android:layout_height="450dp"
+                    android:scaleType="centerCrop"
+                    android:background="@color/pomadeRed"
+                    />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/profile"
+                app:layout_constraintEnd_toEndOf="@+id/profile"
+                app:layout_constraintStart_toStartOf="@+id/profile"
+                app:layout_constraintTop_toTopOf="@+id/profile"
+                android:text="Your Video"
+                android:textColor="@color/whiteMilk"/>
+            <EditText
+                android:id="@+id/nameProfile"
+                android:layout_width="300dp"
+                android:layout_height="75dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile"
+                android:inputType="textPersonName"
+                android:hint="@string/your_name"
+                android:textColorHint="@color/pomadeRed"/>
+
+            <EditText
+                android:id="@+id/ageProfile"
+                android:layout_width="300dp"
+                android:layout_height="75dp"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameProfile"
+                android:hint="Your Age"
+                android:textColorHint="@color/pomadeRed"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</FrameLayout>

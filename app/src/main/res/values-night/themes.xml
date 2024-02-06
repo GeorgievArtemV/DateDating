@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DateDating" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="bottomNavigationStyle">
+            @style/Widget.MaterialComponents.BottomNavigationView.Colored
+        </item>
+        <item name="colorPrimary">
+            @color/whiteMilk
+        </item>
+        <item name="android:navigationBarColor">
+            @color/whiteMilk
+        </item>
+        <item name="android:statusBarColor">
+            @color/pomadeRed
+        </item>
+        <item name="android:windowLightStatusBar">
+            false
+        </item>
+
+    </style>
+
+    <style name="Theme.DateDating" parent="Base.Theme.DateDating" />
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize10Percent" parent="">
+        <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="ThemeOverlay.DateDating.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/pomadeRed</item>
+        <item name="fullscreenTextColor">@color/whiteMilk</item>
+    </style>
+</resources>
