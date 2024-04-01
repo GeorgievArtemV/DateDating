@@ -86,7 +86,7 @@ public class CoreFragment extends Fragment {
             @Override
             public void onCardSwiped(Direction direction) {
                 if (direction == Direction.Right){
-                    Toast.makeText(getContext(), "Direction Right", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireContext(), "Direction Right", Toast.LENGTH_SHORT).show();
                     countDirection++;
                     if (countDirection==5) {
                         showAd();
@@ -94,7 +94,7 @@ public class CoreFragment extends Fragment {
                     }
                 }
                 if (direction == Direction.Left){
-                    Toast.makeText(getContext(), "Direction Left", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireContext(), "Direction Left", Toast.LENGTH_SHORT).show();
                     countDirection++;
                     if (countDirection==5) {
                         showAd();
