@@ -1,6 +1,7 @@
 package com.example.datedating.ui.screen.messanger;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,14 +30,6 @@ public class MessangerFragment extends Fragment {
 
     private int[] lenght = {1,2};
 
-    public MessangerFragment(String s) {
-        this.namePartner = s;
-    }
-
-
-    public static MessangerFragment newInstance() {
-        return new MessangerFragment(namePartner);
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -44,6 +37,10 @@ public class MessangerFragment extends Fragment {
         binding = FragmentMessangerBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         RecyclerView recyclerView = binding.messengerList;
+        Bundle bundle = this.getArguments();
+        if (bundle != null){
+            namePartner = bundle.getString("peredacha");
+        }
         messangerAdapter = new MessangerAdapter(qwe,namePartner,/*qaz,true,*/ lenght);
         binding.textItemMessagesTitle.setText(namePartner);
         recyclerView.setAdapter(messangerAdapter);

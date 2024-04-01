@@ -2,6 +2,7 @@ package com.example.datedating.ui.screen.messages;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,7 +69,12 @@ public class MessagesFragment extends Fragment implements OnItemClick {
     @Override
     public void onItemClick(int item) {
         mViewModel.getLivePartnerData().observe(getViewLifecycleOwner(), partnerList -> {
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.placeHolder, new MessangerFragment(partnerList.get(item).getNamePartner())).addToBackStack("zxc").commit();
+            Bundle bundle = new Bundle();
+            bundle.putString("peredacha",partnerList.get(item).getNamePartner() );
+            MessangerFragment messangerFragment = new MessangerFragment();
+            messangerFragment.setArguments(bundle);
+
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.placeHolder, messangerFragment).addToBackStack("zxc").commit();
         });
 
     }
